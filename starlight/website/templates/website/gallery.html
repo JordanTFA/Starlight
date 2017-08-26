@@ -3,4 +3,10 @@
 {% block content %}
 
 	<h3>Gallery</h3>
+
+	{% for cat in all_categories %}
+	<ul>
+		<li>{{ cat.cat_name }}</li>
+		</ul>
+	{% endfor %}
 {% endblock %}
