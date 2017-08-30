@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
 	cat_name = models.CharField(max_length=50)
-	cat_photo = models.IntegerField(default=1) # IMPORTANT: This will be changed to an imageField in the future to represent the category photo
+	cat_photo = models.FileField()
 
 	class Meta:
 		verbose_name_plural = "Categories"

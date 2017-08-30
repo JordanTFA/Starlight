@@ -6,6 +6,7 @@
 	<h3>Gallery</h3>
 	
 	{% for cat in all_categories %}
-			<img src="{% static 'photos/testimg/3.png' %}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;"></img>
+			<!--<img src="{% static 'photos/testimg/3.png' %}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;"></img>-->
+			<img src="{{ cat.cat_photo.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;"></img>
 	{% endfor %}
 {% endblock %}
