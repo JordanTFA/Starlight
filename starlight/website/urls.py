@@ -4,8 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns=[
-	url(r'^$', views.index, name='index'),
-	url(r'^gallery/', views.gallery, name='gallery'),
+	url(r'^$', views.indexView, name='index'),
+	url(r'^gallery/$', views.galleryView, name='gallery'),
+	url(r'^gallery/(?P<cat_name>[A-Za-z]+)/$', views.categoryView, name='category'),#DetailView.as_view(), name='detail'),
 ]
 
 if settings.DEBUG:
