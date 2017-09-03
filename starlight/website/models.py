@@ -13,7 +13,8 @@ class Category(models.Model):
 
 class Photo(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
-	photo_name = models.CharField(max_length=30)
+	photo_name = models.CharField(max_length=100)
+	photo_img = models.FileField()
 
 	def __str__ (self):
-		return '(' + self.category + ') ' + self.photo_name 
+		return self.photo_name 
