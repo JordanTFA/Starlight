@@ -5,9 +5,17 @@
 
 	<h3><center>Gallery</center></h3>
 
-		{% for cat in all_categories %}
-				<a href="{{ cat.cat_name }}">
-					<img src="{{ cat.cat_photo.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;border: black 2px outset;"></img>
-				</a>
-		{% endfor %}
+		<div id="category-list">
+			<div class="photos">
+				<ul id="horizantal-list">
+					{% for cat in all_categories %}
+						<li>
+							<a href="{{ cat.cat_name }}">
+								<img src="{{ cat.cat_photo.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;border: black 2px outset;"></img>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 {% endblock %}
