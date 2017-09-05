@@ -86,3 +86,9 @@ ul#horizantal-list{
 ul#horizontal-list li{
   display: inline;
 }
+
+h1#gallery-heading{
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  text-align: center;
+
+}
