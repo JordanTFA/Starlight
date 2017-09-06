@@ -3,7 +3,19 @@
 {% load staticfiles %}
 
 {% block content %}
-		<h1>The Photo Page for {{ the_photos.category }}</h1>
+		
+	<h1 id="category-heading">The Photo Page for {{ the_photos.category }}</h1>	
 
-		<img src="{{ the_photos.photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;border: black 2px outset;"></img>
+
+	<div id="category-list">
+		<div class="photos">
+			<ul id="horizantal-list">
+				{% for p in the_photos %}
+					<li>
+						<img src="{{ p.photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;border: black 2px outset;"></img>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
 {% endblock %}

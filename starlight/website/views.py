@@ -13,5 +13,7 @@ def galleryView(request):
 
 def categoryView(request, cat_name_from_url):
 
-	the_photos = get_object_or_404(Photo, category=1)#cat_name_from_url)#get_object_or_404(Category, cat_name=cat_name_from_url)
+	c = Category.objects.get(pk=1)
+
+	the_photos = c.photo_set.all()
 	return render(request, 'website/photos.html', {'the_photos': the_photos})

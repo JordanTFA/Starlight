@@ -98,3 +98,9 @@ h1#index-heading{
   text-align: center;
 
 }
+
+h1#category-heading{
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  text-align: center;
+
+}
