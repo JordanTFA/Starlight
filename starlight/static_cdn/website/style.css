@@ -77,14 +77,10 @@ body{
   margin: 0 auto;
 }
 
-ul#horizantal-list{
+ul#horizontal-list{
   min-width: 1800px;
   list-style: none;
   padding-top: 20px;
-}
-
-ul#horizontal-list li{
-  display: inline;
 }
 
 h1#gallery-heading{

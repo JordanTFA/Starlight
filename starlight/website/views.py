@@ -13,7 +13,8 @@ def galleryView(request):
 
 def categoryView(request, cat_name_from_url):
 
-	c = Category.objects.get(pk=1)
+	the_cat = cat_name_from_url
+	c = Category.objects.get(cat_name=the_cat)
 
 	the_photos = c.photo_set.all()
 	return render(request, 'website/photos.html', {'the_photos': the_photos})
