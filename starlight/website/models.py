@@ -14,6 +14,7 @@ class Category(models.Model):
 class Photo(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	photo_name = models.CharField(max_length=100)
+	photo_preview = models.FileField()
 	photo_img = models.FileField()
 
 	def __str__ (self):
