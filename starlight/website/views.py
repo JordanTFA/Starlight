@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Category, Photo
+from .models import Category, Photo, Top_Photo
 
 def indexView(request):
-	return render(request, 'website/index.html', {'context': "context"})
+
+	all_top_photos = Top_Photo.objects.all()
+	context = {"all_top_photos" : all_top_photos}
+	return render(request, 'website/index.html', context)
 
 def galleryView(request):
 
@@ -17,4 +20,6 @@ def categoryView(request, cat_name_from_url):
 	c = Category.objects.get(cat_name=the_cat)
 
 	the_photos = c.photo_set.all()
-	return render(request, 'website/photos.html', {'the_photos': the_photos})
+
+	context = {'the_photos': the_photos}
+	return render(request, 'website/photos.html', context)

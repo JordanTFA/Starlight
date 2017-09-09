@@ -5,16 +5,12 @@
 {% block content %}
 		
 	<h1 id="category-heading">The Photo Page for {{ the_photos.cat_name }}</h1>	
-	
+
 	<div id="category-list">
 		<div class="photos">
 			<ul id="horizontal-list">
 				{% for p in the_photos %}
 					<li>
-						<!-- <a href="{{ p.photos.img.url }}">
-							<img src="{{ p.photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;border: black 2px outset;"></img>
-						</a> -->
-
 						<a href="{{ p.photo_img.url }}" data-lightbox="image-1" data-title="{{ p.photo_name }}"><img src="{{ p.photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:200px;height:200px;border: black 2px outset;"></img></a>
 					</li>
 				{% endfor %}
