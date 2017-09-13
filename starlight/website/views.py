@@ -22,4 +22,4 @@ def categoryView(request, cat_name_from_url):
 	the_photos = c.photo_set.all()
 
 	context = {'the_photos': the_photos}
-	return render(request, 'website/photos.html', context)
+	return render(request, 'website/photos.html', context, the_cat)
