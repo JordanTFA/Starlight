@@ -4,15 +4,6 @@
 
 {% block content %}
 
-
-
-
-<!--<img src="{% static 'photos/isobel/1.jpg' %}" alt="Main-Pic" style="width:600px;height:600px;border: gold 2px outset">
-<img src="{% static 'photos/isobel/3.jpg' %}" alt="Main-Pic" style="width:600px;height:600px;border: gold 2px outset">
-<img src="{% static 'photos/isobel/1.jpg' %}" alt="Main-Pic" style="width:600px;height:600px;border: gold 2px outset">
-<img src="{% static 'photos/isobel/3.jpg' %}" alt="Main-Pic" style="width:600px;height:600px;border: gold 2px outset">-->
-	
-
 </div>
 	<h1 id="index-heading">Starlight</h1>
 
@@ -21,6 +12,8 @@
 			{% for t in all_top_photos %}
 				<img src="{{ t.top_photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:600px;height:600px;border: gold 2px outset;"></img>
 			{% endfor %}
+		</figure>
+	</div>
 
 			
 	<!-- <a href="{% static 'photos/isobel/1.jpg' %}" data-lightbox="image-1" data-title="Isobel">
