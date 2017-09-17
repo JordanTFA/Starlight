@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Category for photos (E.g. Christmas, Halloween)
 class Category(models.Model):
 	cat_name = models.CharField(max_length=50)
 	cat_photo = models.ImageField()
@@ -11,6 +11,7 @@ class Category(models.Model):
 	def __str__ (self):
 		return self.cat_name
 
+# Actual photo
 class Photo(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	photo_name = models.CharField(max_length=100, blank=True, unique=False)
@@ -19,6 +20,7 @@ class Photo(models.Model):
 	def __str__ (self):
 		return self.photo_name 
 		
+# "Favourite" photos to be displayed on homepage
 class Top_Photo(models.Model):
 	top_photo_name = models.CharField(max_length=100)
 	top_photo_img = models.ImageField()
@@ -28,3 +30,8 @@ class Top_Photo(models.Model):
 
 	def __str__ (self):
 		return self.top_photo_name
+
+
+
+
+# Can possibly get rid of the top_photo model and just have a boolean favourite option
