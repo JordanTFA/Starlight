@@ -5,22 +5,31 @@ from django.core.files.base import ContentFile
 # This all needs sorted so that we can rotate images
 # Would be ideal if I just have one rotate function
 # instead of 3 (right, left and 180)
-def rotateLeft(request,id):
-    myModel = myModel.objects.get(pk=id)
 
-    original_photo = StringIO.StringIO(myModel.file.read())
-    rotated_photo = StringIO.StringIO()
 
-    image = Image.open(original_photo)
-    image = image.rotate(-90)
-    image.save(rotated_photo, 'JPEG')
+class PhotoDetails(admin.ModelAdmin):
+	list_display = ('photo_name', 'category', 'photo_img')
+	search_fields = ('category', 'photo_name')
 
-    myModel.file.save(image.file.path, ContentFile(rotated_photo.getvalue()))
-    myModel.save()
+class rotateLeft(admin.ModelAdmin):
+	pass
+	
+    #list_diplay = ('title', 'desc')
+
+    #original_photo = StringIO.StringIO(Photo.file.read())
+    #rotated_photo = StringIO.StringIO()
+
+    #image = Image.open(original_photo)
+    #image = image.rotate(-90)
+    #image.save(rotated_photo, 'PNG')
+
+    #Photo.file.save(image.file.path, ContentFile(rotated_photo.getvalue()))
+    #Photo.save()
 
 
 # Register your models here.
 admin.site.register(Category)
-admin.site.register(Photo)
+admin.site.register(Photo, PhotoDetails)
 admin.site.register(Top_Photo)
+#admin.site.register(rotateLeft)
 
