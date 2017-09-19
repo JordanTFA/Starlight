@@ -9,7 +9,8 @@ from django.core.files.base import ContentFile
 
 class PhotoDetails(admin.ModelAdmin):
 	list_display = ('photo_name', 'category', 'photo_img')
-	search_fields = ('category', 'photo_name')
+	search_fields = ('photo_name', 'photo_img', 'category__cat_name')
+	ordering = ['category__cat_name']
 
 class rotateLeft(admin.ModelAdmin):
 	pass

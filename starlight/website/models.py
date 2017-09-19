@@ -11,6 +11,9 @@ class Category(models.Model):
 	def __str__ (self):
 		return self.cat_name
 
+	def __unicode__(self):
+		return self.cat_name
+
 # Actual photo
 class Photo(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
