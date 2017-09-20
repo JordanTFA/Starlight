@@ -9,8 +9,8 @@
 
 	<div id="slider">
 		<figure>
-			{% for t in all_top_photos %}
-				<img src="{{ t.top_photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:600px;height:600px;border: gold 2px outset;"></img>
+			{% for f in all_favourite_photos %}
+				<img src="{{ f.photo_img.url }}" style="float: left; width: 30%; margin-right: 1%; margin-bottom: 0.5em;width:600px;height:600px;border: gold 2px outset;"></img>
 			{% endfor %}
 		</figure>
 	</div>

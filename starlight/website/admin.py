@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Photo, Top_Photo
+from .models import Category, Photo#, Top_Photo
 from django.core.files.base import ContentFile
 
 # This all needs sorted so that we can rotate images
@@ -31,6 +31,6 @@ class rotateLeft(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Category)
 admin.site.register(Photo, PhotoDetails)
-admin.site.register(Top_Photo)
+#admin.site.register(Top_Photo)
 #admin.site.register(rotateLeft)
 

@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
-from .models import Category, Photo, Top_Photo
+from .models import Category, Photo#, Top_Photo
 
 # Homepage
 def indexView(request):
 
 	# Get all of the photos to be displayed on the homepage
-	all_top_photos = Top_Photo.objects.all()
-	context = {"all_top_photos" : all_top_photos}
+	c = Category.objects.all()
+	all_favourite_photos = c.photo_set.all()
+	
+	context = {"all_favourite_photos" : all_favourite_photos}
 	return render(request, 'website/index.html', context)
 
 # Gallery

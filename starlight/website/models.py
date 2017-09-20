@@ -18,11 +18,13 @@ class Category(models.Model):
 class Photo(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	photo_name = models.CharField(max_length=100, blank=True, unique=False)
+	photo_isFavourite = models.BooleanField(default=False)
 	photo_img = models.ImageField()
 
 	def __str__ (self):
 		return self.photo_name 
-		
+
+'''	
 # "Favourite" photos to be displayed on homepage
 class Top_Photo(models.Model):
 	top_photo_name = models.CharField(max_length=100)
@@ -33,8 +35,7 @@ class Top_Photo(models.Model):
 
 	def __str__ (self):
 		return self.top_photo_name
-
-
+'''
 
 
 # Can possibly get rid of the top_photo model and just have a boolean favourite option
