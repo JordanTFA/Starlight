@@ -1,14 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, get_list_or_404
 from django.http import HttpResponse
-from .models import Category, Photo#, Top_Photo
+from .models import Category, Photo
 
 # Homepage
 def indexView(request):
 
-	# Get all of the photos to be displayed on the homepage
-	c = Category.objects.all()
-	all_favourite_photos = c.photo_set.all()
-	
+	# Get all of the favourite photos to be displayed on the homepage
+	all_favourite_photos = Photo.objects.filter(photo_is_favourite=True)
+
 	context = {"all_favourite_photos" : all_favourite_photos}
 	return render(request, 'website/index.html', context)
 
@@ -25,8 +24,9 @@ def categoryView(request, cat_name_from_url):
 
 	# Get all photos in the chosen category
 	the_cat = cat_name_from_url
-	c = Category.objects.get(cat_name=the_cat)
+
+	c = get_object_or_404(Category, cat_name=the_cat)
 	the_photos = c.photo_set.all()
 
 	context = {'the_photos': the_photos}
-	return render(request, 'website/photos.html', context, the_cat)
+	return render(request, 'website/photos.html', context)

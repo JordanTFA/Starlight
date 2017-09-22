@@ -18,7 +18,7 @@ class Category(models.Model):
 class Photo(models.Model):
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	photo_name = models.CharField(max_length=100, blank=True, unique=False)
-	photo_isFavourite = models.BooleanField(default=False)
+	photo_is_favourite = models.BooleanField(default=False)
 	photo_img = models.ImageField()
 
 	def __str__ (self):
