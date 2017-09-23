@@ -28,5 +28,5 @@ def categoryView(request, cat_name_from_url):
 	c = get_object_or_404(Category, cat_name=the_cat)
 	the_photos = c.photo_set.all()
 
-	context = {'the_photos': the_photos}
+	context = {'the_photos': the_photos, 'cat_name' : the_cat}
 	return render(request, 'website/photos.html', context)
