@@ -30,3 +30,20 @@ def categoryView(request, cat_name_from_url):
 
 	context = {'the_photos': the_photos, 'cat_name' : the_cat}
 	return render(request, 'website/photos.html', context)
+
+# Add text overlay to category thumbnails (needs some playing around with)
+'''
+https://github.com/abarto/django-watermark-images
+
+class TextOverlay():
+
+	def form_valid():
+		text = form.cleaned_data['text']
+        image = Image.open(form.cleaned_data['image'])
+
+        result_image = add_text_overlay(image, text)
+
+        result_id = _create_result_id()
+        _save_source_image(image, result_id)
+        _save_result_image(result_image, result_id)
+'''
