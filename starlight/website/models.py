@@ -23,19 +23,3 @@ class Photo(models.Model):
 
 	def __str__ (self):
 		return self.photo_name 
-
-'''	
-# "Favourite" photos to be displayed on homepage
-class Top_Photo(models.Model):
-	top_photo_name = models.CharField(max_length=100)
-	top_photo_img = models.ImageField()
-
-	class Meta:
-		verbose_name_plural = "Top Photos"
-
-	def __str__ (self):
-		return self.top_photo_name
-'''
-
-
-# Can possibly get rid of the top_photo model and just have a boolean favourite option
