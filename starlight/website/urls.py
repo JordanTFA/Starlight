@@ -10,6 +10,8 @@ urlpatterns=[
 	url(r'^gallery/$', views.galleryView, name='gallery'),
 	# Category
 	url(r'^gallery/(?P<cat_name_from_url>[A-Za-z0-9 ]+)/$', views.categoryView, name='category'),
+
+	url(r'^panel/$', views.controlPanelView, name='panel'),
 ]
 
 if settings.DEBUG:

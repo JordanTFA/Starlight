@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
 from .models import Category, Photo
 
@@ -30,6 +32,16 @@ def categoryView(request, cat_name_from_url):
 
 	context = {'the_photos': the_photos, 'cat_name' : the_cat}
 	return render(request, 'website/photos.html', context)
+
+@login_required
+def controlPanelView(request):
+	if not request.user.is_authenticated():
+		return HttpResponse("Not authenticated");
+
+	if request.user.is_authenticated():
+		return HttpResponse("Authenticated");
+
+	#return HttpResponse("This is the control panel")
 
 # Add text overlay to category thumbnails (needs some playing around with)
 '''
