@@ -36,10 +36,12 @@ def categoryView(request, cat_name_from_url):
 @login_required
 def controlPanelView(request):
 	if not request.user.is_authenticated():
-		return HttpResponse("Not authenticated");
+		context = {'foo', 'bar'}
+		return render(request, 'website/login.html', context)
 
 	if request.user.is_authenticated():
-		return HttpResponse("Authenticated");
+		context = {'foo' : 'bar'}
+		return render(request, 'website/panel.html', context)
 
 	#return HttpResponse("This is the control panel")
 

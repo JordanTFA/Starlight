@@ -9,7 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{% static 'website/css/lightbox.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'dropzone/home/dropzone.css' %}"/>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <script src="{% static 'website/js/lightbox-plus-jquery.js' %}"></script>
+        <script src="{% static 'website/js/lightbox/lightbox-plus-jquery.js' %}"></script>
         <script src="{% static '/dropzone/js/dropzone.js' %}"></script>
 	</head>
     <body>
@@ -23,6 +23,7 @@
                 <a class="navbar-brand" href="/gallery">Gallery</a>
 
                 {% if request.user.is_authenticated %}
+                    <a class="navbar-brand" href="/panel/">Control Panel</a>
                     <a class="navbar-brand">Welcome {{request.user.username}}</a>
                     <a class="navbar-brand" href="/logout/">Log Out</a>
                 {% else %}
