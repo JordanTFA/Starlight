@@ -40,7 +40,8 @@ def controlPanelView(request):
 		return render(request, 'website/login.html', context)
 
 	if request.user.is_authenticated():
-		context = {'foo' : 'bar'}
+		all_categories = Category.objects.order_by('cat_name')
+		context = {'all_categories' : all_categories}
 		return render(request, 'website/panel.html', context)
 
 	#return HttpResponse("This is the control panel")

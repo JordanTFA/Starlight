@@ -4,35 +4,51 @@
 {% load staticfiles %}
 {% block content %}
 
-<script src="{% static '/website/js/panel/paneltabs.js' %}"></script>
-
 <h2>The Panel</h2>
 
-<div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openTab('Upload')">Upload</button>
-  <button class="w3-bar-item w3-button" onclick="openTab('Edit')">Edit</button>
-  <button class="w3-bar-item w3-button" onclick="openTab('Remove')">Remove</button>
+<div class="container">
+<div class="tab">
+  <button class="tablinks" onclick="openTab('Upload')">Upload</button>
+  <button class="tablinks" onclick="openTab('Edit')">Edit</button>
+  <button class="tablinks" onclick="openTab('Remove')">Remove</button>
 </div>
 
-<div id="Upload" class="tab">
-  <h2>Upload</h2>
-  <p>Upload goes here.</p>
+<div id="Upload" class="tabcontent">
+  <h2>Upload Photos!</h2>
+
+  <div class="dropdown">
+
+      <span>Select a Category</span>
+  
+      <div class="dropdown-content">
+        {% for cat in all_categories %}
+          <p>{{ cat.cat_name }}</p>
+        {% endfor %}
+      </div>
+
+  </div>
+
+  <form action="/file-upload"
+      class="dropzone"
+      id="my-awesome-dropzone"></form>
+      
 </div>
 
-<div id="Edit" class="tab" style="display:none">
+<div id="Edit" class="tabcontent" style="display:none">
   <h2>Edit</h2>
   <p>Edit goes here.</p> 
 </div>
 
-<div id="Remove" class="tab" style="display:none">
+<div id="Remove" class="tabcontent" style="display:none">
   <h2>Remove</h2>
   <p>Remove goes here.</p> 
+</div>
 </div>
 
 <script>
 	function openTab(category) {
     var i;
-    var x = document.getElementsByClassName("city");
+    var x = document.getElementsByClassName("tabcontent");
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none"; 
     }
