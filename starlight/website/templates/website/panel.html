@@ -4,14 +4,15 @@
 {% load staticfiles %}
 {% block content %}
 
-<h2>The Panel</h2>
+<center><h2>The Panel</h2></center>
 
 <div class="container">
-<div class="tab">
-  <button class="tablinks" onclick="openTab('Upload')">Upload</button>
-  <button class="tablinks" onclick="openTab('Edit')">Edit</button>
-  <button class="tablinks" onclick="openTab('Remove')">Remove</button>
-</div>
+  <div class="tab">
+    <button class="tablinks" onclick="openTab('Upload')">Upload</button>
+    <button class="tablinks" onclick="openTab('Edit')">Edit</button>
+    <button class="tablinks" onclick="openTab('Categories')">Categories</button>
+    <button class="tablinks" onclick="openTab('Remove')">Remove</button>
+  </div>
 
 <div id="Upload" class="tabcontent">
   <h2>Upload Photos!</h2>
@@ -28,6 +29,7 @@
 
   </div>
 
+  <!-- TODO -->
   <form action="/file-upload"
       class="dropzone"
       id="my-awesome-dropzone"></form>
@@ -37,6 +39,11 @@
 <div id="Edit" class="tabcontent" style="display:none">
   <h2>Edit</h2>
   <p>Edit goes here.</p> 
+</div>
+
+<div id="Categories" class="tabcontent" style="display:none">
+  <h2>Categories</h2>
+  <p>Categories go here.</p> 
 </div>
 
 <div id="Remove" class="tabcontent" style="display:none">
