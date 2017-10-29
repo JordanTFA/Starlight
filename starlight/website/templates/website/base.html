@@ -2,22 +2,75 @@
 
 {% load staticfiles %}
 
-<html>
-	<head>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-		<link rel="stylesheet" type="text/css" href="{% static 'website/css/style.css' %}"/>
+<head>
+        <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'website/css/style.css' %}"/>
         <link rel="stylesheet" type="text/css" href="{% static 'lightbox/css/lightbox.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'dropzone/css/dropzone.css' %}"/>
 
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
         <script src="{% static 'lightbox/js/lightbox-plus-jquery.js' %}"></script>
         <script src="{% static 'dropzone/js/dropzone.js' %}"></script>
-	</head>
+
+<style>
+ul#navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<ul id="navbar">
+  <li><a href="/">Home</a></li>
+  <li><a href="/gallery">Gallery</a></li>
+
+    {% if request.user.is_authenticated %}
+
+        <li><a href="/panel/" >Control Panel</a></li>
+        <li>Welcome {{ request.user.username }}</a></li>
+        <li style="float:right"><a class="active" href="/logout/">Log Out</a></li>
+
+    {% else %}
+        <li style="float:right"><a class="active" href="/login/">Log In</a></li>
+
+    {% endif %}
+</ul>
+
+</body>
+
+<!--
+<html>
+
     <body>
         <nav class="navbar navbar-default">
         <div class="container-fluid">
         
-            <!-- Navbar -->
+            <!-- Navbar 
             <div class="navbar-header">
                 
                 <a class="navbar-brand" href="/">Home</a>
@@ -35,7 +88,7 @@
         </div>
         </nav> 
 
-    </body>
+    </body> -->
 
     {% block content %}
 
