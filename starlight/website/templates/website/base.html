@@ -19,7 +19,9 @@ ul#navbar {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #00bfff;
+    border-width: 1px;
+    border-color: #102aea;
 }
 
 li {
@@ -30,12 +32,14 @@ li a {
     display: block;
     color: white;
     text-align: center;
+    font-family: "Helvetica", "Times New Roman", Times, serif;
+    font-size: 1.1em;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
+    background-color: white;
 }
 
 .active {
@@ -52,8 +56,8 @@ li a:hover:not(.active) {
     {% if request.user.is_authenticated %}
 
         <li><a href="/panel/" >Control Panel</a></li>
-        <li>Welcome {{ request.user.username }}</a></li>
         <li style="float:right"><a class="active" href="/logout/">Log Out</a></li>
+        <li style="float:right"><a>Welcome {{ request.user.username }}</a></li>
 
     {% else %}
         <li style="float:right"><a class="active" href="/login/">Log In</a></li>

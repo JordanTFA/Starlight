@@ -83,6 +83,12 @@ ul#horizontal-list{
   padding-top: 20px;
 }
 
+h1#panel-heading{
+  font-family: "Georgia", "Times New Roman", Times, serif;
+  text-align: center;
+
+}
+
 h1#gallery-heading{
   font-family: "Georgia", "Times New Roman", Times, serif;
   text-align: center;
@@ -164,7 +170,7 @@ h1#category-heading{
 div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    background-color: #00bfff;
 }
 
 /* Style the buttons inside the tab */
@@ -194,4 +200,24 @@ div.tab button.active {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+    background-color: #ffffff;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
