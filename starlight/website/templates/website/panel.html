@@ -14,18 +14,22 @@
     <button class="tablinks" onclick="openTab('Remove')">Remove</button>
   </div>
 
-<div id="Upload" class="tabcontent">
+<div id="Upload" class="tabcontent" style="display:block">
   <h2>Upload Photos!</h2>
 
   <div class="dropdown">
 
-      <span>Select a Category</span>
+    <select id=d"thedropdown">
+      <option value="1">One</option>
+      <option value="2">Two</option>
+    </select>
+      <!--<span>Select a Category</span>
   
       <div class="dropdown-content">
         {% for cat in all_categories %}
           <p>{{ cat.cat_name }}</p>
         {% endfor %}
-      </div>
+      </div>-->
 
   </div>
 
