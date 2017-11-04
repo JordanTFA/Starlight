@@ -19,9 +19,10 @@
 
   <div class="dropdown">
 
-    <select id=d"thedropdown">
-      <option value="1">One</option>
-      <option value="2">Two</option>
+    <select id="thedropdown">
+      {% for c in all_categories %}
+        <option value="{{ c.cat_name }}">{{ c.cat_name }}</option>
+      {% endfor %}
     </select>
       <!--<span>Select a Category</span>
   
@@ -41,8 +42,17 @@
 </div>
 
 <div id="Edit" class="tabcontent" style="display:none">
-  <h2>Edit</h2>
-  <p>Edit goes here.</p> 
+  <h2>Edit Photos!</h2>
+  
+  <div class="dropdown">
+    <select id="thedropdown">
+
+      {% for c in all_categories %}
+        <option value="{{ c.cat_name }}">{{ c.cat_name }}</option>
+      {% endfor %}
+    </select>
+
+  </div>
 </div>
 
 <div id="Categories" class="tabcontent" style="display:none">
