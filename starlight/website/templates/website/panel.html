@@ -56,14 +56,30 @@
 </div>
 
 <div id="Categories" class="tabcontent" style="display:none">
-  <h2>Categories</h2>
-  <p>Categories go here.</p> 
+
+  <h2>Select a Category</h2>
+
+  <div class="dropdown">
+    <select id="thedropdown">
+
+      {% for c in all_categories %}
+        <option value="{{ c.cat_name }}">{{ c.cat_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
 </div>
 
 <div id="Remove" class="tabcontent" style="display:none">
   <h2>Remove</h2>
-  <p>Remove goes here.</p> 
-</div>
+
+  <div class="dropdown">
+    <select id="thedropdown">
+
+      {% for c in all_categories %}
+        <option value="{{ c.cat_name }}">{{ c.cat_name }}</option>
+      {% endfor %}
+    </select>
+  </div>
 </div>
 
 <script>
