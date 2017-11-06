@@ -44,8 +44,6 @@ def controlPanelView(request):
 		context = {'all_categories' : all_categories}
 		return render(request, 'website/panel.html', context)
 
-	#return HttpResponse("This is the control panel")
-
 # Add text overlay to category thumbnails (needs some playing around with)
 '''
 https://github.com/abarto/django-watermark-images
