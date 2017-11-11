@@ -67,7 +67,7 @@
     </select>
   </div>
 
-  <div class="button" id="addcat" onclick="addCategory()">Add a Category</div>  
+  <button type="button">Add a Category</button>
 
   <script>
     function addCategory(){
@@ -75,6 +75,8 @@
       // add category here
     }
   </script>
+
+  <!--<img src="{{ cat_photo.url }}" style="width: 30%;width:200px;height:200px;border: black 2px outset;"></img>-->
 </div>
 
 <div id="Remove" class="tabcontent" style="display:none">
@@ -90,6 +92,8 @@
       {% endfor %}
     </select>
   </div>
+
+  <button type="button">Remove Category</button> <!-- This should create a warning -->
 </div>
 
 <script>
