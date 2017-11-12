@@ -93,10 +93,22 @@
     </select>
   </div>
 
-  <button type="button">Remove Category</button> <!-- This should create a warning -->
+  <button type="button" onclick="confirmRemoveCat()">Remove Category</button> <!-- This should create a warning -->
 </div>
 
 <script>
+
+  function confirmRemoveCat(){
+    var c = confirm("Deleting this category will permanently remove the category and all of its data!");
+
+    if(c==true){
+      // Delete category
+      alert("deleted");
+    }
+    
+  }
+
+
 	function openTab(category) {
     var i;
     var x = document.getElementsByClassName("tabcontent");
